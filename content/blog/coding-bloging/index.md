@@ -16,6 +16,5 @@ As a challenge, I decided to start this blog to push myself out from the comfort
 ## How
 Choosing a blogging engine wasn’t really that complicated. It’s just a tool and the focus should be toward the content not the style.
 
-
 ## Related & Further reading
 - Why Every Professional Should Consider Blogging
