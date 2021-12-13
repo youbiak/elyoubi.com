@@ -1,6 +1,7 @@
 ---
 title: Coding & Blogging
-date: '2019-06-15'
+date: '2021-12-15'
 ---
 
-Work in progress, using Gatsby, GraphQL and Netlify to add blogposts & personal projects section.
+Working on updating the blog stack and moving out from Gatsby.
+Will try to publish some offline articles I wrote
