@@ -1,18 +1,30 @@
-import { Container, HStack, VStack, Heading, Text } from "@chakra-ui/react";
+import { Container, Stack, VStack, Heading, Text, Box } from "@chakra-ui/react";
 import Image from "./Image";
 import avatar from "../../public/img/avatar.png";
 
 const Hero = () => (
-  <HStack mt="16" justifyContent="center" alignItems={"start"} spacing={8}>
-    <Image
-      src={avatar}
-      alt="Picture of the author"
-      width="100px"
-      height="100px"
-    />
-    <VStack maxW="md" alignItems={"left"}>
+  <Stack
+    as="section"
+    mt="16"
+    justifyContent="center"
+    alignItems={["center", "flex-start"]}
+    direction={["column", "row"]}
+    spacing={8}
+  >
+    <Box position="relative" flexShrink={0}>
+      <Image
+        src={avatar}
+        alt="Elyoubi"
+        height={150}
+        width={150}
+        objectFit="cover"
+        rounded="base"
+      />
+    </Box>
+
+    <VStack maxW="sm" alignItems={["center", "flex-start"]}>
       <Heading size={"lg"}>Hey, I’m Akram El Youbi.</Heading>
-      <Text fontSize="sm">
+      <Text fontSize="md">
         I’m a software engineer focusing on web & mobile development. Passionate
         about programming, design and problem solving. I’m originally from
         Morocco, and now living in Paris, France. Currenlty working as a
@@ -20,7 +32,7 @@ const Hero = () => (
         Generale, Dailymotion, Europcar ...
       </Text>
     </VStack>
-  </HStack>
+  </Stack>
 );
 
 export default Hero;
