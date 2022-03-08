@@ -2,4 +2,8 @@
 
 ## Check
 
-- ColorModeScript: to persist color mode across pages
+- difference flex-start and start
+
+## Packages
+
+- setup the kbar package
