@@ -41,7 +41,7 @@ const Navigation = () => {
           elyoubi.
         </Heading>
       </NextLink>
-      <HStack alignItems="center" flexWrap={"wrap"}>
+      <HStack alignItems="center" flexWrap={"wrap"} spacing={0}>
         {LINKS.map(({ href, label }) => (
           <NextLink href={href} passHref key={href}>
             <Button
