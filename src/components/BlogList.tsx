@@ -8,6 +8,7 @@ import {
   Text,
   useColorModeValue,
   VStack,
+  Stack,
 } from "@chakra-ui/react";
 
 const BlogList = () => {
@@ -15,7 +16,8 @@ const BlogList = () => {
   return (
     <VStack alignItems="stretch" mt="16">
       <Heading size={"lg"}>Recent blog posts</Heading>
-      <HStack
+      <Stack
+        flexDirection={["column", "row"]}
         p={4}
         _hover={{
           bg: hoverBg,
@@ -25,13 +27,18 @@ const BlogList = () => {
         transitionProperty="all"
         transitionTimingFunction="ease-out"
         borderRadius="md"
+        spacing={0}
         justifyContent={"space-between"}
+        alignItems="flex-start"
         cursor="pointer"
       >
         <Heading size="md">How I built my personal website</Heading>
-        <time dateTime="2021-11-11">Nov 11, 2021</time>
-      </HStack>
-      <HStack
+        <Text as="time" dateTime="2021-11-11" mt={0}>
+          Nov 11, 2021
+        </Text>
+      </Stack>
+      <Stack
+        flexDirection={["column", "row"]}
         p={4}
         _hover={{
           bg: hoverBg,
@@ -41,13 +48,18 @@ const BlogList = () => {
         transitionProperty="all"
         transitionTimingFunction="ease-out"
         borderRadius="md"
+        spacing={0}
         justifyContent={"space-between"}
+        alignItems="flex-start"
         cursor="pointer"
       >
         <Heading size="md">How to build a GraphQL API using TypeScript</Heading>
-        <time dateTime="2021-11-11">Nov 11, 2021</time>
-      </HStack>
-      <HStack
+        <Text as="time" dateTime="2021-11-11" mt={0}>
+          Nov 11, 2021
+        </Text>
+      </Stack>
+      <Stack
+        flexDirection={["column", "row"]}
         p={4}
         _hover={{
           bg: hoverBg,
@@ -57,12 +69,16 @@ const BlogList = () => {
         transitionProperty="all"
         transitionTimingFunction="ease-out"
         borderRadius="md"
+        spacing={0}
         justifyContent={"space-between"}
+        alignItems="flex-start"
         cursor="pointer"
       >
         <Heading size="md">How to handle autolayout in swift</Heading>
-        <time dateTime="2021-11-11">Nov 11, 2021</time>
-      </HStack>
+        <Text as="time" dateTime="2021-11-11" mt={0}>
+          Nov 11, 2021
+        </Text>
+      </Stack>
     </VStack>
   );
 };
