@@ -9,20 +9,16 @@ import {
 } from "@chakra-ui/react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import NextLink from "next/link";
+import { motion, AnimateSharedLayout } from "framer-motion";
 
-type Link = {
-  href: string;
-  label: string;
-};
-
-const LINKS: Link[] = [
-  { href: "/blog", label: "Blog" },
-  { href: "/projects", label: "Projects" },
-  { href: "/uses", label: "Uses" },
-  { href: "/books", label: "Books" },
-  { href: "/photography", label: "Photography" },
-  { href: "/investing", label: "Investing" },
-  { href: "/notes", label: "Notes" },
+const LINKS = [
+  "Blog",
+  "Projects",
+  "Uses",
+  "Books",
+  "Photography",
+  "Investing",
+  "Notes",
 ];
 
 const Navigation = () => {
@@ -42,22 +38,27 @@ const Navigation = () => {
         </Heading>
       </NextLink>
       <HStack alignItems="center" flexWrap={"wrap"} spacing={0}>
-        {LINKS.map(({ href, label }) => (
-          <NextLink href={href} passHref key={href}>
-            <Button
-              as={Link}
-              size="sm"
-              variant="ghost"
-              _hover={{
-                background: "white",
-                color: "teal.500",
-                textDecoration: "none",
-              }}
-            >
-              {label}
-            </Button>
-          </NextLink>
-        ))}
+        <AnimateSharedLayout>
+          {LINKS.map((page) => {
+            const path = `/${page.toLowerCase()}`;
+            return (
+              <NextLink href={path} passHref key={page}>
+                <Button
+                  as={Link}
+                  size="sm"
+                  variant="ghost"
+                  _hover={{
+                    background: "white",
+                    color: "teal.500",
+                    textDecoration: "none",
+                  }}
+                >
+                  {page}
+                </Button>
+              </NextLink>
+            );
+          })}
+        </AnimateSharedLayout>
       </HStack>
       <HStack>
         <IconButton

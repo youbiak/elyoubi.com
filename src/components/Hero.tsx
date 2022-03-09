@@ -5,7 +5,7 @@ import avatar from "../../public/img/avatar.png";
 const Hero = () => (
   <Stack
     as="section"
-    mt="16"
+    mt={[4, 16]}
     justifyContent="center"
     alignItems={["center", "flex-start"]}
     direction={["column", "row"]}
