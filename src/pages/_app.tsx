@@ -3,7 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { KBarProvider } from "kbar";
 
 import theme from "../theme";
-import Layout from "../components/layout/Layout";
+import Layout from "@/components/Layout";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
