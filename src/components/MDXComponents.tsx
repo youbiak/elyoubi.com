@@ -56,6 +56,12 @@ const CodeHighlight = (props: any) => {
               rounded="md"
               p={4}
               mx={-4}
+              _before={{
+                content: `"${planguage}"`,
+                display: "inline-block",
+                mr: "5px",
+                fontSize: 12,
+              }}
             >
               {tokens.map((line, i) => {
                 const lineProps = getLineProps({ line, key: i });
@@ -66,7 +72,6 @@ const CodeHighlight = (props: any) => {
                     {showLineNumbers && (
                       <chakra.span
                         w={8}
-                        display="table-cell"
                         textAlign="right"
                         userSelect="none"
                         color={lineNumberColor}
