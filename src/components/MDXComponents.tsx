@@ -123,7 +123,7 @@ const MDXComponents = {
   h2: (props: any) => <Heading as="h2" size="2xl" my={2} {...props} />,
   h3: (props: any) => <Heading as="h3" size="xl" my={2} {...props} />,
   h4: (props: any) => <Heading as="h4" size="lg" my={2} {...props} />,
-  p: (props: any) => <chakra.p lineHeight={1.7} {...props} />,
+  // p: (props: any) => <chakra.p lineHeight={1.7} {...props} />,
   ul: (props: any) => <chakra.ul mx={4} {...props} />,
   ol: (props: any) => <chakra.ol mx={4} {...props} />,
   code: CodeHighlight,
