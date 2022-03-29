@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import NextLink from "next/link";
-import { motion, AnimateSharedLayout } from "framer-motion";
 
 const LINKS = [
   "Blog",
@@ -17,8 +16,8 @@ const LINKS = [
   "Uses",
   "Books",
   "Photography",
-  "Investing",
-  "Notes",
+  // "Investing",
+  // "Notes",
 ];
 
 const Navigation = () => {
@@ -38,27 +37,26 @@ const Navigation = () => {
         </Heading>
       </NextLink>
       <HStack alignItems="center" flexWrap={"wrap"} spacing={0}>
-        <AnimateSharedLayout>
-          {LINKS.map((page) => {
-            const path = `/${page.toLowerCase()}`;
-            return (
-              <NextLink href={path} passHref key={page}>
-                <Button
-                  as={Link}
-                  size="sm"
-                  variant="ghost"
-                  _hover={{
-                    background: "white",
-                    color: "teal.500",
-                    textDecoration: "none",
-                  }}
-                >
-                  {page}
-                </Button>
-              </NextLink>
-            );
-          })}
-        </AnimateSharedLayout>
+        {LINKS.map((page) => {
+          const path = `/${page.toLowerCase()}`;
+          return (
+            <NextLink href={path} passHref key={page}>
+              <Button
+                as={Link}
+                size="sm"
+                variant="ghost"
+                transition={"all 0.2s ease-in-out"}
+                _hover={{
+                  background: "gray.100",
+                  color: "purple.700",
+                  textDecoration: "none",
+                }}
+              >
+                {page}
+              </Button>
+            </NextLink>
+          );
+        })}
       </HStack>
       <HStack>
         <IconButton

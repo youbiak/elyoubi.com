@@ -4,6 +4,9 @@ description: List of components supported by MDX Design System
 date: March 17, 2022
 ---
 
+lorem ipsum dolor sit amet, consectetur adipiscing elit.
+lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
 # Heading 1
 
 ## Heading 2
@@ -12,29 +15,71 @@ date: March 17, 2022
 
 #### Heading 4
 
-**javascript**
+---
+
+### [Heading with link](#heading-with-link)
+
+---
+
+#### Code block
+
+Supports syntax highlighting and line numbers
 
 ```javascript
 console.log("code");
 var foo = "yo";
 ```
 
-**shell**
-
 ```shell
-console.log("code");
-var foo = "yo";
+npm run build
 ```
-
-**text**
 
 ```text
 console.log("code");
 var foo = "yo";
 ```
 
-Test of `inline` code
+Also supporting inline code `console.log('inline')`
 
-<div>
-  <b>test</b>
-</div>
+---
+
+#### Links
+
+External links : [MDX](https://mdxjs.com "title")
+
+Internal links : [Code Block](#code-block)
+
+---
+
+#### Blockquote
+
+> A greater than…
+
+---
+
+#### Lists
+
+- Asterisks for unordered items
+
+1. Decimals and a dot for ordered items
+
+---
+
+#### Image
+
+<img src="https://picsum.photos/200/300" alt="MDX logo" />
+
+---
+
+#### Custom components
+
+<Box
+  border="2px"
+  borderRadius="md"
+  p={4}
+  borderColor="gray.200"
+  fontSize="2xl"
+  onMouseEnter={() => alert("hey")}
+>
+  Custom Component
+</Box>

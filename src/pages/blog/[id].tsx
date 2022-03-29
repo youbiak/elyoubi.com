@@ -2,25 +2,29 @@ import type { NextPage } from "next";
 import { getAllPostIds, getPostData } from "src/lib/posts";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import { Heading } from "@chakra-ui/react";
+import { Heading, VStack, Text } from "@chakra-ui/react";
 import MDXComponents from "@/components/MDXComponents";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
-import rehypeHighlight from "rehype-highlight";
-import Head from "next/head";
 import rehypeExternalLinks from "rehype-external-links";
 
 // import MDXComponents from "@/components/MDXComponents";
 
 const Post: NextPage<any> = ({ source }) => {
-  // console.log(source);
+  console.log(source);
 
   return (
     <>
       <div className="wrapper">
-        <Heading size="sm">{source.frontmatter.date}</Heading>
-        <Heading>{source.frontmatter.title}</Heading>
-        <Heading size="md">{source.frontmatter.description}</Heading>
+        <VStack alignItems={"center"} pb={16}>
+          <Heading size="2xl" mt={16} textAlign={"center"}>
+            {source.frontmatter.title}
+          </Heading>
+          <Text size="sm" fontWeight={"semibold"} mt={4} mb={16}>
+            {source.frontmatter.date}
+          </Text>
+        </VStack>
+        {/* <Heading size="md">{source.frontmatter.description}</Heading> */}
         <MDXRemote {...source} components={MDXComponents} />
       </div>
     </>

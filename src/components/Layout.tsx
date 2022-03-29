@@ -7,7 +7,7 @@ import Footer from "./Footer";
 type Props = PropsWithChildren<{}>;
 
 const Layout = ({ children }: Props) => (
-  <Container maxW={"container.lg"}>
+  <Container maxW={"container.md"}>
     <Header />
     {children}
     {/* <Footer /> */}

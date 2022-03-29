@@ -2,16 +2,13 @@ import {
   Alert,
   Box,
   chakra,
-  Link,
-  HTMLChakraProps,
   Kbd,
   useColorModeValue,
   useColorMode,
   Heading,
+  Divider,
 } from "@chakra-ui/react";
-import { mode } from "@chakra-ui/theme-tools";
 import NextImage from "next/image";
-import slugify from "slugify";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import darkTheme from "prism-react-renderer/themes/nightOwl";
 import lightTheme from "prism-react-renderer/themes/nightOwlLight";
@@ -21,13 +18,10 @@ const ChakraHighlight = chakra(Highlight, {
     ["Prism", "theme", "code", "language", "children"].includes(prop),
 });
 
-const Pre = (props: any) => (
-  <chakra.div my="2em" borderRadius="sm" {...props} />
-);
+const Pre = (props: any) => <chakra.div my={4} {...props} />;
 
 const CodeHighlight = (props: any) => {
   const { children: codeString, className: language } = props;
-  console.log(props);
 
   const planguage = language?.replace("language-", "") ?? "";
   const theme = useColorModeValue(lightTheme, darkTheme);
@@ -35,8 +29,23 @@ const CodeHighlight = (props: any) => {
   const preBackground = useColorModeValue("gray.50", "gray.900");
   const showLineNumbers = !["shell", "text"].includes(planguage);
 
+  const inlineCode = {
+    bg: useColorModeValue("gray.100", "gray.700"),
+    color: useColorModeValue("gray.700", "gray.100"),
+  };
+
   // inline code
-  if (!planguage) return <chakra.span {...props} />;
+  if (!planguage)
+    return (
+      <chakra.span
+        borderRadius="4"
+        px={1}
+        py={1}
+        bg={inlineCode.bg}
+        color={inlineCode.color}
+        {...props}
+      />
+    );
 
   return (
     <ChakraHighlight
@@ -59,7 +68,7 @@ const CodeHighlight = (props: any) => {
               _before={{
                 content: `"${planguage}"`,
                 display: "inline-block",
-                mr: "5px",
+                mr: 4,
                 fontSize: 12,
               }}
             >
@@ -95,98 +104,45 @@ const CodeHighlight = (props: any) => {
   );
 };
 
-// const LinkedHeading = (props: HTMLChakraProps<"h2">) => {
-//   const slug = slugify(props.children as string, { lower: true });
-//   return (
-//     <Link href={`#${slug}`} role="group">
-//       <Box
-//         {...props}
-//         d="inline"
-//         color={useColorModeValue("gray.700", "white")}
-//         fontFamily="heading"
-//       >
-//         {props.children}
-//       </Box>
-//       <chakra.span
-//         aria-label="anchor"
-//         color="purple.500"
-//         userSelect="none"
-//         fontWeight="normal"
-//         outline="none"
-//         _focus={{ opacity: 1, boxShadow: "outline" }}
-//         opacity={0}
-//         _groupHover={{ opacity: 1 }}
-//         ml="0.375rem"
-//       >
-//         #
-//       </chakra.span>
-//     </Link>
-//   );
-// };
+const Image = (props: any) => {
+  return <NextImage {...props} layout="fill" loading="lazy" quality={100} />;
+};
 
-// const Image = (props: any) => {
-//   return (
-//     <NextImage {...props} layout="responsive" loading="lazy" quality={100} />
-//   );
-// };
-
-// const Anchor = (props: any) => {
-//   const { colorMode } = useColorMode();
-//   return (
-//     <chakra.a
-//       color={mode("purple.500", "purple.300")({ colorMode })}
-//       {...props}
-//     />
-//   );
-// };
+const Anchor = (props: any) => {
+  return (
+    <chakra.a
+      fontWeight={"bold"}
+      color={useColorModeValue("purple.800", "purple.400")}
+      {...props}
+    />
+  );
+};
 
 const MDXComponents = {
   h1: (props: any) => <Heading as="h1" size="3xl" my={4} {...props} />,
   h2: (props: any) => <Heading as="h2" size="2xl" my={2} {...props} />,
   h3: (props: any) => <Heading as="h3" size="xl" my={2} {...props} />,
   h4: (props: any) => <Heading as="h4" size="lg" my={2} {...props} />,
+  p: (props: any) => <chakra.p lineHeight={1.7} {...props} />,
   code: CodeHighlight,
   pre: Pre,
-
-  //   inlineCode: InlineCode,
-  // hr: (props: any) => <chakra.hr apply="mdx.hr" {...props} />,
-  //   inlineCode: InlineCode,
-  //   code: CodeHighlight,
-  //   strong: (props: any) => <Box as="strong" fontWeight="semibold" {...props} />,
-  //   pre: Pre,
-  //   kbd: Kbd,
-  //   img: Image,
-  //   br: ({ reset, ...props }: any) => (
-  //     <Box
-  //       as={reset ? "br" : undefined}
-  //       h={reset ? undefined : "24px"}
-  //       {...props}
-  //     />
-  //   ),
-  //   table: Table,
-  //   th: THead,
-  //   td: TData,
-  //   a: Anchor,
-  //   p: (props: any) => <chakra.p apply="mdx.p" {...props} />,
-  //   ul: (props: any) => (
-  //     <chakra.ul px={{ base: 4, md: 0 }} apply="mdx.ul" {...props} />
-  //   ),
-  //   ol: (props: any) => <chakra.ol apply="mdx.ul" {...props} />,
-  //   li: (props: any) => <chakra.li pb="4px" {...props} />,
-  //   blockquote: (props: any) => (
-  //     <Box>
-  //       <Alert
-  //         as="blockquote"
-  //         role="none"
-  //         rounded="4px"
-  //         status="warning"
-  //         variant="left-accent"
-  //         {...props}
-  //         w="unset"
-  //         mx={-4}
-  //       />
-  //     </Box>
-  //   ),
+  img: Image,
+  a: Anchor,
+  kbd: Kbd,
+  hr: (props: any) => <Divider my={4} {...props} />,
+  blockquote: (props: any) => (
+    <Alert
+      as="blockquote"
+      role="none"
+      rounded="4px"
+      status="error"
+      variant="left-accent"
+      {...props}
+      w="unset"
+      mx={-4}
+    />
+  ),
+  Box: Box,
 };
 
 export default MDXComponents;

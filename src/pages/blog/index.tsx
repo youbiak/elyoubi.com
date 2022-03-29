@@ -1,6 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import { getSortedPostsData } from "../../lib/posts";
 import NextLink from "next/link";
+import BlogList from "@/components/BlogList";
 
 type Props = {
   posts: {
@@ -11,18 +12,7 @@ type Props = {
 };
 
 const Blog: NextPage<Props> = ({ posts }) => {
-  console.log(posts);
-  return (
-    <ul>
-      {posts.map(({ id, date, title }) => (
-        <NextLink href={`/blog/${id}`} passHref key={id}>
-          <li>
-            {title}|{id}|{date}
-          </li>
-        </NextLink>
-      ))}
-    </ul>
-  );
+  return <BlogList posts={posts} />;
 };
 
 export async function getStaticProps() {
