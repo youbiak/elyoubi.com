@@ -20,10 +20,13 @@ const theme = extendTheme({
   lineHeights: {
     base: 1.75,
   },
+
   styles: {
     global: (props: any) => ({
       body: {
         bg: mode("#f0efeb", "#0a0c10")(props),
+        letterSpacing: "1px",
+        fontSize: "1.2rem",
       },
     }),
   },

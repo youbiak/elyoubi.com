@@ -1,4 +1,4 @@
-import { Box, Container, VStack } from "@chakra-ui/react";
+import { Box, Container, Stack, VStack } from "@chakra-ui/react";
 import type { PropsWithChildren } from "react";
 
 import Header from "./Navigation";
@@ -14,9 +14,7 @@ const Layout = ({ children }: Props) => (
     flexDir="column"
   >
     <Header />
-    <VStack flex="1" alignItems={"flex-start"}>
-      {children}
-    </VStack>
+    <Stack flex="1">{children}</Stack>
     <Footer />
   </Container>
 );
