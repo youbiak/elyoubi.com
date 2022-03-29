@@ -29,9 +29,7 @@ const BlogList = ({ posts }: Props) => {
               bg: hoverBg,
               transform: "scale(1.025, 1.025)",
             }}
-            transitionDuration="slow"
-            transitionProperty="all"
-            transitionTimingFunction="ease-out"
+            transition={"all 0.2s ease-in-out"}
             borderRadius="md"
             spacing={0}
             justifyContent={"space-between"}
