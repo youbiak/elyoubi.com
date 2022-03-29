@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 const LINKS = [
   "Blog",
@@ -23,6 +24,8 @@ const LINKS = [
 const Navigation = () => {
   const { toggleColorMode, colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
+  const { asPath } = useRouter();
+  console.log(asPath);
   return (
     <Stack
       as="nav"
@@ -44,7 +47,7 @@ const Navigation = () => {
               <Button
                 as={Link}
                 size="sm"
-                variant="ghost"
+                variant={asPath === path ? "solid" : "ghost"}
                 transition={"all 0.2s ease-in-out"}
                 _hover={{
                   background: "gray.100",
