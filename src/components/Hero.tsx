@@ -12,7 +12,7 @@ const Hero = () => (
   >
     <Box position="relative">
       <Image
-        src="/img/avatar.avif"
+        src="/img/avatar.png"
         alt="Elyoubi"
         height={250}
         width={300}
@@ -22,13 +22,12 @@ const Hero = () => (
     </Box>
 
     <VStack maxW="sm" alignItems={["center", "flex-start"]}>
-      <Heading size={"lg"}>Hey, I’m Akram El Youbi.</Heading>
+      <Heading size={"md"}>Hey, I’m Akram El Youbi 👋</Heading>
       <Text fontSize="md">
-        I’m a software engineer focusing on web & mobile development. Passionate
-        about programming, design and problem solving. I’m originally from
-        Morocco, and now living in Paris, France. Currenlty working as a
-        freelance engineer, before that, I worked with companies such as Societe
-        Generale, Dailymotion, Europcar.
+        A software engineer focusing on web & mobile development. Passionate
+        about programming, design and problem solving. <br />
+        Curently working as a freelance frontend developer. <br />
+        Based in <strong>Paris, France 🇫🇷</strong>
       </Text>
     </VStack>
   </Stack>

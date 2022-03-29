@@ -18,7 +18,7 @@ type Props = {
 const BlogList = ({ posts }: Props) => {
   const hoverBg = useColorModeValue("gray.100", "gray.700");
   return (
-    <VStack alignItems="space-between" w="full" mt="16">
+    <VStack alignItems="space-between" w="full">
       {posts.map(({ id, title, date }) => (
         <NextLink href={`/blog/${id}`} passHref key={id}>
           <Stack
