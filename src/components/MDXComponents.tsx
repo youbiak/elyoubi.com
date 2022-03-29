@@ -132,6 +132,7 @@ const MDXComponents = {
   a: Anchor,
   kbd: Kbd,
   hr: (props: any) => <Divider my={4} {...props} />,
+  strong: (props: any) => <chakra.strong fontFamily={"Poppins"} {...props} />,
   blockquote: (props: any) => (
     <Alert
       as="blockquote"

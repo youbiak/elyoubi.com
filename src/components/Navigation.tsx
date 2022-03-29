@@ -33,7 +33,7 @@ const Navigation = () => {
       alignItems="center"
       direction={["column", "row"]}
       py="3"
-      fontSize="md"
+      letterSpacing={"normal"}
     >
       <NextLink href="/" passHref>
         <Heading as={Link} size="md">
