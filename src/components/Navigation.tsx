@@ -6,6 +6,7 @@ import {
   useColorMode,
   Button,
   Link,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import NextLink from "next/link";
@@ -25,7 +26,7 @@ const Navigation = () => {
   const { toggleColorMode, colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
   const { asPath } = useRouter();
-  console.log(asPath);
+  const hoverBg = useColorModeValue("purple.100", "purple.700");
   return (
     <Stack
       as="nav"
@@ -51,8 +52,7 @@ const Navigation = () => {
                 variant={asPath === path ? "solid" : "ghost"}
                 transition={"all 0.2s ease-in-out"}
                 _hover={{
-                  background: "gray.100",
-                  color: "purple.700",
+                  background: hoverBg,
                   textDecoration: "none",
                 }}
               >

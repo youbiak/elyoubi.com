@@ -4,6 +4,7 @@ import {
   useColorModeValue,
   VStack,
   Stack,
+  Link,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
@@ -16,26 +17,29 @@ type Props = {
 };
 
 const BlogList = ({ posts }: Props) => {
-  const hoverBg = useColorModeValue("gray.100", "gray.700");
+  const hoverBg = useColorModeValue("purple.100", "purple.700");
   return (
     <VStack alignItems="space-between" w="full">
       {posts.map(({ id, title, date }) => (
         <NextLink href={`/blog/${id}`} passHref key={id}>
           <Stack
+            as={Link}
             flexDirection={["column", "row"]}
-            p={4}
+            py={2}
+            px={4}
             _hover={{
               bg: hoverBg,
               transform: "scale(1.025, 1.025)",
+              textDecoration: "none",
             }}
-            transition={"all 0.2s ease-in-out"}
+            transition={"all 0.3s ease-in-out"}
             borderRadius="md"
             spacing={0}
             justifyContent={"space-between"}
-            alignItems="flex-start"
+            alignItems={["flex-start", "center"]}
             cursor="pointer"
           >
-            <Heading size="md">{title}</Heading>
+            <Heading size="sm">{title}</Heading>
             <Text as="time" dateTime={date} mt={0}>
               {date}
             </Text>

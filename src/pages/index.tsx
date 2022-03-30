@@ -40,9 +40,9 @@ const Home: NextPage<Props> = ({ posts }) => {
           <Button
             as="a"
             alignSelf={"flex-end"}
-            mt={4}
+            mt={2}
             rightIcon={<BsFillArrowUpRightSquareFill />}
-            colorScheme="gray"
+            colorScheme="purple"
             variant="ghost"
           >
             read all articles
