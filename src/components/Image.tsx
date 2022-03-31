@@ -18,6 +18,4 @@ const MagicImage = chakra(NextImage, {
     ].includes(prop),
 });
 
-const Image = (props: Props) => <MagicImage {...props} />;
-
-export default Image;
+export default MagicImage;

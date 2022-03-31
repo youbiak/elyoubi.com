@@ -24,7 +24,7 @@ const BlogList = ({ posts }: Props) => {
         <NextLink href={`/blog/${id}`} passHref key={id}>
           <Stack
             as={Link}
-            flexDirection={["column", "row"]}
+            flexDirection={["column", "column", "row"]}
             py={2}
             px={4}
             _hover={{
@@ -36,7 +36,7 @@ const BlogList = ({ posts }: Props) => {
             borderRadius="md"
             spacing={0}
             justifyContent={"space-between"}
-            alignItems={["flex-start", "center"]}
+            alignItems={["flex-start", "flex-start", "center"]}
             cursor="pointer"
           >
             <Heading size="sm">{title}</Heading>

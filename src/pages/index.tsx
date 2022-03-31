@@ -14,6 +14,7 @@ import {
   Flex,
   IconButton,
   Button,
+  Stack,
 } from "@chakra-ui/react";
 import { BsFillArrowUpRightSquareFill } from "react-icons/bs";
 import Image from "@/components/Image";
@@ -53,25 +54,58 @@ const Home: NextPage<Props> = ({ posts }) => {
         <Heading size="lg" mt={4}>
           Featured shots
         </Heading>
-        <HStack spacing={4} w="full" h="200px" alignItems={"stretch"}>
-          <Box flex="1" bg="blue.400" borderRadius="md">
+        <Flex
+          justifyContent={"space-evenly"}
+          w="full"
+          alignItems={"center"}
+          flexDir={["column", "row"]}
+          gap={4}
+        >
+          <NextLink href="/photography" passHref>
+            <Box flex="1" as="a">
+              <Image
+                src="/img/test.avif"
+                alt="test"
+                width="300px"
+                height="200px"
+                objectFit={"cover"}
+                borderRadius="md"
+              />
+            </Box>
+          </NextLink>
+          <Box flex="1">
             <Image
-              alt="image"
-              src="/img/avatar.png"
+              src="/img/test.avif"
+              alt="test"
               width="300px"
-              flex="1"
+              height="200px"
               objectFit={"cover"}
-              height={"400px"}
               borderRadius="md"
             />
           </Box>
-          <Box flex="1" bg="blue.400" borderRadius="md" flexGrow={1}>
-            2
+          <Box flex="1">
+            <Image
+              src="/img/test.avif"
+              alt="test"
+              width="300px"
+              height="200px"
+              objectFit={"cover"}
+              borderRadius="md"
+            />
           </Box>
-          <Box flex="1" bg="blue.400" borderRadius="md">
-            3
-          </Box>
-        </HStack>
+        </Flex>
+        <NextLink href="/blog" passHref>
+          <Button
+            as="a"
+            alignSelf={"flex-end"}
+            mt={2}
+            rightIcon={<BsFillArrowUpRightSquareFill />}
+            colorScheme="gray"
+            variant="ghost"
+          >
+            see all shots
+          </Button>
+        </NextLink>
       </VStack>
     </>
   );

@@ -146,6 +146,8 @@ const MDXComponents = {
     />
   ),
   Box: Box,
+  NextImage,
+  Image,
 };
 
 export default MDXComponents;
