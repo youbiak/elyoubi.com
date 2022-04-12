@@ -7,8 +7,9 @@ import {
   useColorMode,
   Heading,
   Divider,
+  Center,
 } from "@chakra-ui/react";
-import NextImage from "next/image";
+import Image from "@/components/Image";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import darkTheme from "prism-react-renderer/themes/nightOwl";
 import lightTheme from "prism-react-renderer/themes/nightOwlLight";
@@ -105,10 +106,6 @@ const CodeHighlight = (props: any) => {
   );
 };
 
-const Image = (props: any) => {
-  return <NextImage {...props} layout="fill" loading="lazy" quality={100} />;
-};
-
 const Anchor = (props: any) => {
   return (
     <chakra.a
@@ -143,11 +140,15 @@ const MDXComponents = {
       {...props}
       w="unset"
       mx={-4}
+      my={8}
     />
   ),
   Box: Box,
-  NextImage,
-  Image,
+  Image: (props: any) => (
+    <Center>
+      <Image {...props} />
+    </Center>
+  ),
 };
 
 export default MDXComponents;

@@ -6,20 +6,24 @@ const Footer = () => {
     <VStack py={8} spacing={8}>
       <Divider />
       <SimpleGrid columns={{ base: 1, md: 3 }} w="full">
-        <VStack alignItems="flex-start">
-          <NextLink href="/" passHref>
-            <Link>Home</Link>
-          </NextLink>
-          <NextLink href="/" passHref>
-            <Link>blog</Link>
-          </NextLink>
-          <NextLink href="/" passHref>
-            <Link>projects</Link>
-          </NextLink>
-          <NextLink href="/" passHref>
-            <Link>about</Link>
-          </NextLink>
-        </VStack>
+        <NextLink href="/" passHref>
+          <Link>Home</Link>
+        </NextLink>
+        <NextLink href="/blog" passHref>
+          <Link>Blog</Link>
+        </NextLink>
+        <NextLink href="/projects" passHref>
+          <Link>Projects</Link>
+        </NextLink>
+        <NextLink href="/uses" passHref>
+          <Link>Uses</Link>
+        </NextLink>
+        <NextLink href="/books" passHref>
+          <Link>Books</Link>
+        </NextLink>
+        <NextLink href="/photography" passHref>
+          <Link>Photography</Link>
+        </NextLink>
       </SimpleGrid>
     </VStack>
   );

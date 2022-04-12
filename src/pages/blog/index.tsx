@@ -2,6 +2,7 @@ import type { GetStaticProps, NextPage } from "next";
 import { getSortedPostsData } from "../../lib/posts";
 import NextLink from "next/link";
 import BlogList from "@/components/BlogList";
+import { VStack } from "@chakra-ui/react";
 
 type Props = {
   posts: {
@@ -12,7 +13,11 @@ type Props = {
 };
 
 const Blog: NextPage<Props> = ({ posts }) => {
-  return <BlogList posts={posts} />;
+  return (
+    <VStack py={10}>
+      <BlogList posts={posts} />;
+    </VStack>
+  );
 };
 
 export async function getStaticProps() {

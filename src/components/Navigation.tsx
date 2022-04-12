@@ -23,10 +23,10 @@ const LINKS = [
 ];
 
 const Navigation = () => {
-  const { toggleColorMode, colorMode } = useColorMode();
-  const isDarkMode = colorMode === "dark";
+  const { toggleColorMode } = useColorMode();
+  const ThemeIcon = useColorModeValue(IoMoon, IoSunny);
   const { asPath } = useRouter();
-  const hoverBg = useColorModeValue("purple.100", "purple.700");
+  const hoverBg = useColorModeValue("gray.200", "gray.900");
   return (
     <Stack
       as="nav"
@@ -44,15 +44,17 @@ const Navigation = () => {
       <HStack alignItems="center" flexWrap={"wrap"} spacing={0}>
         {LINKS.map((page) => {
           const path = `/${page.toLowerCase()}`;
+          const isActive = asPath.includes(path);
           return (
             <NextLink href={path} passHref key={page}>
               <Button
                 as={Link}
                 size="sm"
-                variant={asPath === path ? "solid" : "ghost"}
+                colorScheme={isActive ? "brand" : "gray"}
+                variant={isActive ? "solid" : "ghost"}
                 transition={"all 0.2s ease-in-out"}
                 _hover={{
-                  background: hoverBg,
+                  background: !isActive ? hoverBg : "",
                   textDecoration: "none",
                 }}
               >
@@ -67,7 +69,7 @@ const Navigation = () => {
           size="sm"
           variant="ghost"
           aria-label="toggle theme"
-          icon={isDarkMode ? <IoSunny /> : <IoMoon />}
+          icon={<ThemeIcon />}
           onClick={toggleColorMode}
         />
       </HStack>

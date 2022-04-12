@@ -15,9 +15,11 @@ import {
   IconButton,
   Button,
   Stack,
+  Link,
 } from "@chakra-ui/react";
 import { BsFillArrowUpRightSquareFill } from "react-icons/bs";
 import Image from "@/components/Image";
+import { getPhotography } from "src/lib/photography";
 
 type Props = {
   posts: {
@@ -25,9 +27,10 @@ type Props = {
     title: string;
     date: string;
   }[];
+  photos: string[];
 };
 
-const Home: NextPage<Props> = ({ posts }) => {
+const Home: NextPage<Props> = ({ posts, photos }) => {
   return (
     <>
       <Hero />
@@ -43,7 +46,7 @@ const Home: NextPage<Props> = ({ posts }) => {
             alignSelf={"flex-end"}
             mt={2}
             rightIcon={<BsFillArrowUpRightSquareFill />}
-            colorScheme="purple"
+            colorScheme="gray"
             variant="ghost"
           >
             read all articles
@@ -51,50 +54,37 @@ const Home: NextPage<Props> = ({ posts }) => {
         </NextLink>
       </Flex>
       <VStack alignItems={"flex-start"}>
-        <Heading size="lg" mt={4}>
+        <Heading size="lg" my={4}>
           Featured shots
         </Heading>
         <Flex
-          justifyContent={"space-evenly"}
           w="full"
           alignItems={"center"}
           flexDir={["column", "row"]}
           gap={4}
         >
-          <NextLink href="/photography" passHref>
-            <Box flex="1" as="a">
-              <Image
-                src="/img/test.avif"
-                alt="test"
-                width="300px"
-                height="200px"
-                objectFit={"cover"}
-                borderRadius="md"
-              />
-            </Box>
-          </NextLink>
-          <Box flex="1">
-            <Image
-              src="/img/test.avif"
-              alt="test"
-              width="300px"
-              height="200px"
-              objectFit={"cover"}
-              borderRadius="md"
-            />
-          </Box>
-          <Box flex="1">
-            <Image
-              src="/img/test.avif"
-              alt="test"
-              width="300px"
-              height="200px"
-              objectFit={"cover"}
-              borderRadius="md"
-            />
-          </Box>
+          {photos.map((photo: any) => {
+            return (
+              <Link
+                href={`/photography/${photo}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={photo}
+                flex="1"
+              >
+                <Image
+                  src="/photography/picture1.jpg"
+                  alt="test"
+                  width="300px"
+                  height="200px"
+                  objectFit={"cover"}
+                  borderRadius="md"
+                />
+              </Link>
+            );
+          })}
         </Flex>
-        <NextLink href="/blog" passHref>
+        <NextLink href="/photography" passHref>
           <Button
             as="a"
             alignSelf={"flex-end"}
@@ -112,10 +102,14 @@ const Home: NextPage<Props> = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  const posts = getSortedPostsData();
+  const posts = getSortedPostsData({ limit: 3 });
+  const photos = getPhotography({ limit: 3 });
+  console.log(photos);
+
   return {
     props: {
       posts,
+      photos,
     },
   };
 }
