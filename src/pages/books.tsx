@@ -39,7 +39,7 @@ const BooksInfo = ({ books }: any) => (
 );
 
 const Books: NextPage = ({ collections }: any) => (
-  <VStack mt={12} spacing={8} divider={<Divider />}>
+  <VStack mt={12} spacing={4} divider={<Divider />}>
     <VStack w="full" alignItems={"flex-start"}>
       <HStack>
         <Icon as={BsFillBookmarkStarFill} color="blue.500" w="6" h="6" />

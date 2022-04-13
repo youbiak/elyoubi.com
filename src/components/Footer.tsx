@@ -1,11 +1,12 @@
 import NextLink from "next/link";
-import { Divider, Link, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Divider, Link, SimpleGrid, VStack, Text } from "@chakra-ui/react";
 
 const Footer = () => {
+  var date = new Date();
   return (
-    <VStack py={8} spacing={8}>
+    <VStack py={8} spacing={8} alignItems="flex-start">
       <Divider />
-      <SimpleGrid columns={{ base: 1, md: 3 }} w="full">
+      <SimpleGrid columns={{ base: 1, md: 2 }} w="full">
         <NextLink href="/" passHref>
           <Link>Home</Link>
         </NextLink>
@@ -25,6 +26,7 @@ const Footer = () => {
           <Link>Photography</Link>
         </NextLink>
       </SimpleGrid>
+      <Text>© {date.getFullYear()} El Youbi Akram</Text>
     </VStack>
   );
 };

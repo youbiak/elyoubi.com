@@ -12,10 +12,10 @@ import {
   ModalFooter,
   ModalHeader,
   Text,
-  Image,
   ModalOverlay,
   Link,
 } from "@chakra-ui/react";
+import Image from "@/components/Image";
 import type { NextPage } from "next";
 import NextLink from "next/link";
 import { getPhotography } from "src/lib/photography";

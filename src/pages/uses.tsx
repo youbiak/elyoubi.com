@@ -10,12 +10,18 @@ import {
 import type { NextPage } from "next";
 
 const Uses: NextPage = () => (
-  <VStack alignItems={"flex-start"} spacing={4} divider={<Divider />} mt={12}>
+  <VStack
+    alignItems={"flex-start"}
+    spacing={4}
+    divider={<Divider />}
+    mt={12}
+    w="full"
+  >
     <Heading size="lg">Gear and software I use</Heading>
 
     <VStack alignItems={"flex-start"}>
       <Heading size="md">Setup</Heading>
-      <UnorderedList>
+      <UnorderedList px={4}>
         <ListItem>MacBook Pro (14-inch, 2021)</ListItem>
         <ListItem>Logitech mx master 2s</ListItem>
         <ListItem>LG 38UC99-W Ultrawide</ListItem>
@@ -28,19 +34,19 @@ const Uses: NextPage = () => (
 
     <VStack alignItems={"flex-start"}>
       <Heading size="md">Photography</Heading>
-      <UnorderedList>
+      <UnorderedList px={4}>
         <ListItem>Sony A7 III</ListItem>
         <ListItem>Sony FE 35mm f/1.8</ListItem>
-        <ListItem>Sony SEL 85 mm f/1.8</ListItem>
-        <ListItem>Tamron 17-28 mm f/2.8 Di III RXD</ListItem>
+        <ListItem>Sony SEL 85mm f/1.8</ListItem>
+        <ListItem>Tamron 17-28mm f/2.8 Di III RXD</ListItem>
+        <ListItem>Sony FE 24–105mm f4 G OSS</ListItem>
         <ListItem>Mavic Air 2 Fly More Combo</ListItem>
-        <ListItem>Sony FE 24–105 mm f4 G OSS</ListItem>
       </UnorderedList>
     </VStack>
 
     <VStack alignItems={"flex-start"}>
       <Heading size="md">Editor</Heading>
-      <UnorderedList>
+      <UnorderedList px={4}>
         <ListItem>Visual Studio Code</ListItem>
         <ListItem>Theme: Night Owl</ListItem>
         <ListItem>Font: Dank Mono</ListItem>
@@ -49,7 +55,7 @@ const Uses: NextPage = () => (
 
     <VStack alignItems={"flex-start"}>
       <Heading size="md">Tech</Heading>
-      <UnorderedList>
+      <UnorderedList px={4}>
         <ListItem>React</ListItem>
         <ListItem>Next.js</ListItem>
         <ListItem>Remix</ListItem>
@@ -60,7 +66,7 @@ const Uses: NextPage = () => (
 
     <VStack alignItems={"flex-start"}>
       <Heading size="md">Productivity</Heading>
-      <UnorderedList>
+      <UnorderedList px={4}>
         <ListItem>TickTick</ListItem>
         <ListItem>Notion</ListItem>
         <ListItem>Obsidian</ListItem>
@@ -69,9 +75,9 @@ const Uses: NextPage = () => (
       </UnorderedList>
     </VStack>
 
-    <VStack>
+    <VStack alignItems={"flex-start"}>
       <Heading size="md">Design</Heading>
-      <UnorderedList>
+      <UnorderedList px={4}>
         <ListItem>Figma</ListItem>
         <ListItem>Photoshop</ListItem>
         <ListItem>Lightroom</ListItem>
@@ -80,7 +86,7 @@ const Uses: NextPage = () => (
 
     <VStack alignItems={"flex-start"}>
       <Heading size="md">Services</Heading>
-      <UnorderedList>
+      <UnorderedList px={4}>
         <ListItem>Vercel</ListItem>
         <ListItem>Digital Ocean</ListItem>
         <ListItem>Netlify</ListItem>

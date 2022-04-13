@@ -1,5 +1,10 @@
+import { Heading } from "@chakra-ui/react";
 import type { NextPage } from "next";
 
-const Projects: NextPage = () => <div>Projects page right here</div>;
+const Projects: NextPage = () => (
+  <Heading textAlign={"center"} mt={12}>
+    Projects uder construction
+  </Heading>
+);
 
 export default Projects;

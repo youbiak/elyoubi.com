@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { getAllPostIds, getPostData } from "src/lib/posts";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import { Heading, VStack, Text } from "@chakra-ui/react";
+import { Heading, VStack, Text, chakra } from "@chakra-ui/react";
 import MDXComponents from "@/components/MDXComponents";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
@@ -20,9 +20,15 @@ const Post: NextPage<any> = ({ source }) => {
           <Heading size="2xl" mt={16} textAlign={"center"}>
             {source.frontmatter.title}
           </Heading>
-          <Text size="sm" fontWeight={"semibold"} mt={4} mb={16}>
+          <chakra.time
+            fontWeight={"semibold"}
+            mt={4}
+            mb={16}
+            dateTime={source.frontmatter.date}
+            color="gray.500"
+          >
             {source.frontmatter.date}
-          </Text>
+          </chakra.time>
         </VStack>
         {/* <Heading size="md">{source.frontmatter.description}</Heading> */}
         <MDXRemote {...source} components={MDXComponents} />
