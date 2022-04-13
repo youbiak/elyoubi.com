@@ -73,7 +73,7 @@ const Home: NextPage<Props> = ({ posts, photos }) => {
                 flex="1"
               >
                 <Image
-                  src="/photography/picture1.jpg"
+                  src={`/photography/${photo}`}
                   alt="test"
                   width="300px"
                   height="200px"
