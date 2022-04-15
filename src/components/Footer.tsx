@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <VStack py={8} spacing={8} alignItems="flex-start">
       <Divider />
-      <SimpleGrid columns={{ base: 1, md: 2 }} w="full">
+      <SimpleGrid columns={{ base: 2, md: 3 }} w="full">
         <NextLink href="/" passHref>
           <Link>Home</Link>
         </NextLink>

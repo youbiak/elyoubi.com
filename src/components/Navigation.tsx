@@ -32,7 +32,7 @@ const Navigation = () => {
       as="nav"
       justifyContent={"space-between"}
       alignItems="center"
-      direction={["column", "row"]}
+      direction={["column", "column", "row"]}
       py="3"
       letterSpacing={"normal"}
     >
