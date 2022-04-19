@@ -19,7 +19,7 @@ import {
 const BooksInfo = ({ books }: any) => (
   <VStack maxW="container.md" alignItems={"flex-start"}>
     {books.map((book: any) => (
-      <HStack key={book.id} alignItems="center" maxW="md" w="full">
+      <HStack key={book.id} alignItems="center" my={4} maxW="md" w="full">
         <Image
           src={book.thumbnail}
           alt={book.title}
