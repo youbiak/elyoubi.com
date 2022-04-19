@@ -8,16 +8,13 @@ const Photography: NextPage = ({ photos }: any) => {
   return (
     <>
       <VStack>
-        <Heading size="2xl" mt={12} alignSelf={"center"}>
-          Photography
-        </Heading>
         <Center>
           <Button
             as="a"
             href="https://unsplash.com/@youbicode"
             target="_blank"
             alignSelf={"flex-end"}
-            my={4}
+            my={[4, 12]}
             rightIcon={<BsFillArrowUpRightSquareFill />}
             colorScheme="gray"
             variant="ghost"

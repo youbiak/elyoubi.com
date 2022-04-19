@@ -14,7 +14,7 @@ const Uses: NextPage = () => (
     alignItems={"flex-start"}
     spacing={4}
     divider={<Divider />}
-    mt={12}
+    mt={[4, 12]}
     w="full"
   >
     <Heading size="lg">Gear and software I use</Heading>
