@@ -71,7 +71,6 @@ export async function getStaticProps() {
     acc[elem.key] = elem;
     return acc;
   }, {});
-  console.log(collections);
 
   return {
     props: { collections },

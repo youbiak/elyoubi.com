@@ -1,32 +1,30 @@
-import {
-  Flex,
-  Heading,
-  VStack,
-  Box,
-  Button,
-  useDisclosure,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  Text,
-  ModalOverlay,
-  Link,
-} from "@chakra-ui/react";
+import { Flex, Heading, VStack, Link, Center, Button } from "@chakra-ui/react";
 import Image from "@/components/Image";
 import type { NextPage } from "next";
-import NextLink from "next/link";
 import { getPhotography } from "src/lib/photography";
+import { BsFillArrowUpRightSquareFill } from "react-icons/bs";
 
 const Photography: NextPage = ({ photos }: any) => {
   return (
     <>
-      <VStack alignItems={"flex-start"}>
-        <Heading size="2xl" my={12} alignSelf={"center"}>
+      <VStack>
+        <Heading size="2xl" mt={12} alignSelf={"center"}>
           Photography
         </Heading>
+        <Center>
+          <Button
+            as="a"
+            href="https://unsplash.com/@youbicode"
+            target="_blank"
+            alignSelf={"flex-end"}
+            my={4}
+            rightIcon={<BsFillArrowUpRightSquareFill />}
+            colorScheme="gray"
+            variant="ghost"
+          >
+            Visit my Unsplash account
+          </Button>
+        </Center>
         <Flex
           w="full"
           alignItems={"center"}

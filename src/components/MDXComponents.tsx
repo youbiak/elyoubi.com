@@ -118,9 +118,9 @@ const Anchor = (props: any) => {
 
 const MDXComponents = {
   h1: (props: any) => <Heading as="h1" size="3xl" my={4} {...props} />,
-  h2: (props: any) => <Heading as="h2" size="2xl" my={2} {...props} />,
-  h3: (props: any) => <Heading as="h3" size="xl" my={2} {...props} />,
-  h4: (props: any) => <Heading as="h4" size="lg" my={2} {...props} />,
+  h2: (props: any) => <Heading as="h2" size="2xl" my={4} {...props} />,
+  h3: (props: any) => <Heading as="h3" size="xl" my={4} {...props} />,
+  h4: (props: any) => <Heading as="h4" size="lg" my={4} {...props} />,
   ul: (props: any) => <chakra.ul mx={4} {...props} />,
   ol: (props: any) => <chakra.ol mx={4} {...props} />,
   code: CodeHighlight,

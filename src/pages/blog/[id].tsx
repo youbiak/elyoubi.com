@@ -11,8 +11,6 @@ import rehypeExternalLinks from "rehype-external-links";
 // import MDXComponents from "@/components/MDXComponents";
 
 const Post: NextPage<any> = ({ source }) => {
-  console.log(source);
-
   return (
     <>
       <div className="wrapper">

@@ -104,7 +104,6 @@ const Home: NextPage<Props> = ({ posts, photos }) => {
 export async function getStaticProps() {
   const posts = getSortedPostsData({ limit: 3 });
   const photos = getPhotography({ limit: 3 });
-  console.log(photos);
 
   return {
     props: {

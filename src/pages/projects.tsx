@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 
 const Projects: NextPage = () => (
   <Heading textAlign={"center"} mt={12}>
-    Projects uder construction
+    Projects under construction
   </Heading>
 );
 
