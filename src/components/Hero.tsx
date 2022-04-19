@@ -12,7 +12,7 @@ const Hero = () => (
   >
     <Box position="relative">
       <Image
-        src="/img/avatar.png"
+        src="/img/avatar.jpg"
         alt="Elyoubi"
         height={250}
         width={300}
