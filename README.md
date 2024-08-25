@@ -3,7 +3,3 @@
 This is a work in progress, sharing it following the #buildinpublic philosophy
 
 
-## TODO
-
-- [ ] setup the kbar package
-- [ ] add personal projects
